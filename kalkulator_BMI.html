@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperalutra</title>
+</head>
+<body>
+    <script>
+        function Oblicz()
+        {       
+            // var temperatura=document.getElementById("Temp").value;
+            // var  wiadomość=document.getElementById("wiado");
+            // 8
+            // if (temperatura >= 10)
+            // {
+            // wiadomość.innerText="Temperatura wysoka";
+            // }
+            // else{
+            //     wiadomość.innerText = "Temperatura niska"
+            // }
+            var waga = document.getElementById("Waga").value
+            var metry = document.getElementById("metry").value
+            var bmi = waga/(metry*metry) 
+            bmi.toFixed(2)
+            var  wiadomość=document.getElementById("wiado");
+            wiadomość.innerText = bmi
+            var wymiary = document.getElementById("wymiary");
+            if  (bmi >= 18.5 && bmi <= 24.9) {
+                wymiary.innerText = " Prawidłowa waga"
+            }
+            else if(bmi >= 25 && bmi <= 29.9) {
+                wymiary.innerText = " nadwaga"
+            }
+            else if(bmi >= 30 && bmi <=34.9) {
+                wymiary.innerText = " I Stopień otyłości "
+            }
+            else if(bmi >= 35 && bmi <= 39.9) {
+                wymiary.innerText = " II Stopień otyłości "
+            }
+            else if(bmi >= 40 && bmi <=49.9) {
+                wymiary.innerText = " III Stopień otyłości "
+            }
+            else if(bmi >= 50) {
+                wymiary.innerText = " Poza skalą"
+            }
+        }
+    </script>
+    <p>Podaj wage w kg:</p><input type="number" id="Waga">
+    <p>Podaj wyskokość w metrach:</p><input type="number" id="metry">
+    <button onclick="Oblicz()">wyślij</button>
+
+    <p id="wiado">Brak danych</p>
+    <p id="wymiary"> Brak danych</p>
+
+</body>
+</html>
